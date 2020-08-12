@@ -1,0 +1,12 @@
+{
+    "invalidLoginData": {
+      "username": "admin11",
+      "password": "admin11"
+    },
+
+    "keycloakdata":{
+      "keycloakusername": "mohit",
+      "keycloakpassword": "rvadmin"
+    }
+    
+  }

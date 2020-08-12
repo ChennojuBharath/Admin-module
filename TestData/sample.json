@@ -1,0 +1,47 @@
+{
+  "id": "master",
+  "realm": "master",
+  "groups": [
+    {
+      "id": "103",
+      "name": "Goa",
+      "path": "/Goa",
+      "attributes": {
+        "level": [
+          "State"
+        ]
+      },
+      "realmRoles": [],
+      "clientRoles": {},
+      "subGroups": [
+        {
+          "id": "104",
+          "name": "Goa Complex",
+          "path": "/Goa/Goa Complex",
+          "attributes": {
+            "level": [
+              "Complex"
+            ]
+          },
+          "realmRoles": [],
+          "clientRoles": {},
+          "subGroups": [
+            {
+              "id": "105",
+              "name": "Goa Public School",
+              "path": "/Telangana/Goa Complex/Goa Public School",
+              "attributes": {
+                "level": [
+                  "School"
+                ]
+              },
+              "realmRoles": [],
+              "clientRoles": {},
+              "subGroups": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

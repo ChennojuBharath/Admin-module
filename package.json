@@ -1,0 +1,31 @@
+{
+  "name": "rishi-valley-lMS-scripts",
+  "version": "1.0.0",
+  "description": "Runs Protractor E2E tests from a Typescript setup",
+  "main": "index.js",
+  "scripts": {
+    "tsc": "tsc",
+    "pretest": "npm run tsc",
+    "test": "protractor outputjs/conf.js"
+  },
+  "dependencies": {
+    "protractor-robot-remote": "^1.0.0",
+    "tslib": "^1.9.0"
+  },
+  "devDependencies": {
+    "@types/jasmine": "~3.4.0",
+    "@types/jasminewd2": "~2.0.6",
+    "@types/node": "~12.7.3",
+    "excel-as-json": "^2.0.2",
+    "jasmine": "^3.4.0",
+    "jasmine-spec-reporter": "^4.2.1",
+    "protractor": "^5.4.2",
+    "protractor-jasmine2-html-reporter": "^0.0.7",
+    "robotjs": "^0.3.7",
+    "ts-node": "8.3.0",
+    "typescript": "~3.6.2",
+    "xlsx": "^0.15.0"
+  },
+  "author": "Chennoju Bharath",
+  "license": "ISC"
+}

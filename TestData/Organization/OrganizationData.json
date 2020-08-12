@@ -1,0 +1,23 @@
+{
+    "OrgType": "Goa",
+      "Orgname": "admin",
+      "Orgparent": "/Goa",
+      "UpdateOrgType": "Zone",
+      "UpdateOrgname": "admin",
+      "UpdateOrgparent": "/Goa",
+      "firstName": "Chennoju",
+      "lastName": "Bharath",
+      "userName": "ChBharath",
+      "mobile": "8686893353",
+      "emailId": "bharath.chennoju@walkingtree.tech",
+      "UpdatefirstName": "admin",
+      "UpdatlastName": "Bharath",
+      "UpdatuserName": "ChBharath",
+      "Updatmobile": "8686893353",
+      "UpdatemailId": "bharath.chennoju@walkingtree.tech",
+      "LMS": "rv_course_approver",
+      "Teacher": "rv_teacher",
+      "Admin": "admin",
+      "Reporting": " Select",
+      "Monitoring": "surveyor"
+  }

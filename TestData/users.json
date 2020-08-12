@@ -1,0 +1,46 @@
+{
+    "realm": "master",
+    "strategy": "IGNORE_EXISTING",
+    "users": [
+        {
+	    "firstName": "Arjun",
+	    "lastName" : "Suravaram",
+            "username": "Arjun",
+            "enabled": true,
+            "email": "newUser@localhost1",
+            "credentials": [
+                {
+                    "type": "password",
+                    "value": "password"
+                }
+            ]
+        },
+        {
+            "firstName": "Karna",
+	    "lastName" : "Suravaram",
+            "username": "Karna",
+            "enabled": true,
+            "email": "newUser@localhost2",
+            "credentials": [
+                {
+                    "type": "password",
+                    "value": "password"
+                }
+            ]
+        }
+    ],
+    "roleMappings": [
+        {
+            "username": "newUser1",
+            "roles": [
+                "rv_employee"
+            ]
+        },
+        {
+            "username": "newUser2",
+            "roles": [
+                "rv_employee"
+            ]
+        }
+    ]
+}
