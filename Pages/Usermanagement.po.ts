@@ -16,7 +16,7 @@ export class UsermanagementPage {
         return element(by.xpath("//input[@type='file']"))
     }
     editicon() {
-        return element(by.xpath("(//mat-icon[text()='edit'])[1]"));
+        return element(by.xpath("(//mat-icon[text()='edit'])[8]"));
     }
     deleteicon() {
         return element(by.xpath("(//mat-icon[text()='delete'])[1]"));
@@ -69,7 +69,7 @@ export class UsermanagementPage {
                 this.UserManagementlink().click();
                 browser.sleep(5000);
                 this.Adduserbtn().click();
-                browser.sleep(1000);
+                browser.sleep(5000);
                 BrowserUtils.enterText(by.xpath("//input[@formcontrolname='firstName']"), record["firstName"]);
                 browser.sleep(1000);
                 BrowserUtils.enterText(by.xpath("//input[@formcontrolname='lastName']"), record["lastName"]);

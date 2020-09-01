@@ -33,25 +33,11 @@ export class loginPage {
     OkButton() {
         return element(by.xpath("//button[text()='OK']"));
     }
-
-    login(logindata) {
-        this.userName().click();
-        this.userName().sendKeys(logindata.username);
-        this.passWord().clear();
-        this.passWord().sendKeys(logindata.password);
-        this.loginButton().click();
-        browser.getCurrentUrl().then((url)=> {
-         expect(url).toContain('all-courses')
-        })
-    }
     keycloak(keycloaklogindata){
         this.keycloakusername().sendKeys(keycloaklogindata.keycloakusername);
         this.keycloakpassword().sendKeys(keycloaklogindata.keycloakpassword);
         this.keycloakloginbtn().click();
         browser.sleep(2000);
-        // browser.getCurrentUrl().then((url)=> {
-        //     expect(url).toContain('all-courses')
-        //    })
     }
 
 }

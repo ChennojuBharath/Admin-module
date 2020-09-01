@@ -10,7 +10,7 @@ export class OrganizationPage {
         return element(by.xpath("//span[text()='Import Oraganization']"));
     }
     addorganization() {
-        return element(by.xpath("//span[text()='Add Oraganization Item']"));
+        return element(by.xpath("//span[contains(text(),'Add Oraganization Item')]"));
     }
     appicon() {
         return element(by.xpath("//mat-icon[text()='apps']"));
@@ -41,7 +41,7 @@ export class OrganizationPage {
         return element(by.xpath("//input[@formcontrolname='name']"))
     }
     Import() {
-        return element(by.xpath("//span[contains(text(),'Import')]"))
+        return element(by.xpath("(//span[contains(text(),'Import')])[2]"))
     }
     Save() {
         return element(by.xpath("//span[text()='Save']"))
@@ -79,6 +79,19 @@ export class OrganizationPage {
     Userpagebreadcrumb() {
         return element(by.xpath("//a[@routerlinkactive='router-link-active']"))
     }
+     CancelImportOrganizationpopup() {
+        browser.ignoreSynchronization = true
+        browser.sleep(5000);
+        this.Organizationlink().click();
+        browser.sleep(2000);
+        this.Importorganization().click();
+         browser.sleep(2000);
+        this.Cancel().click();
+        browser.sleep(2000);
+          this.addorganization().isDisplayed().then(function (dis) {
+                    expect(dis).toBe(true, 'Cancel Import Organizationpopup  is successful')
+                })
+    }
     ImportOrganization() {
         browser.ignoreSynchronization = true
         browser.sleep(5000);
@@ -92,6 +105,10 @@ export class OrganizationPage {
         this.typefile().sendKeys(audioPath);
         browser.sleep(2000);
         this.Import().click();
+        browser.sleep(2000);
+         this.addorganization().isDisplayed().then(function (dis) {
+                    expect(dis).toBe(true, 'Import Organization  is successful')
+                })
     }
     AddOrganization() {
         browser.ignoreSynchronization = true
@@ -102,7 +119,7 @@ export class OrganizationPage {
                 this.Organizationlink().click();
                 browser.sleep(2000);
                 this.addorganization().click();
-                browser.sleep(2000);
+                browser.sleep(5000);
                 BrowserUtils.selectDropdownValue(by.xpath("//select[@formcontrolname='type']"), record["OrgType"]);
                 browser.sleep(1000);
                 BrowserUtils.enterText(by.xpath("//input[@formcontrolname='name']"), record["Orgname"]);
@@ -125,7 +142,7 @@ export class OrganizationPage {
                 this.Organizationlink().click();
                 browser.sleep(2000);
                 this.editicon().click();
-                browser.sleep(2000);
+                browser.sleep(5000);
                 BrowserUtils.selectDropdownValue(by.xpath("//select[@formcontrolname='type']"), record["UpdateOrgType"]);
                 browser.sleep(1000);
                 BrowserUtils.enterText(by.xpath("//input[@formcontrolname='name']"), record["UpdateOrgname"]);
@@ -147,8 +164,8 @@ export class OrganizationPage {
                 browser.sleep(5000);
                 this.Organizationlink().click();
                 browser.sleep(2000);
-                this.editicon().click();
-                browser.sleep(2000);
+                this.addorganization().click();
+                browser.sleep(5000);
                 BrowserUtils.selectDropdownValue(by.xpath("//select[@formcontrolname='type']"), record["OrgType"]);
                 browser.sleep(1000);
                 BrowserUtils.enterText(by.xpath("//input[@formcontrolname='name']"), record["Orgname"]);
@@ -167,10 +184,8 @@ export class OrganizationPage {
     Canceladdorgpopup() {
         browser.ignoreSynchronization = true
         browser.sleep(5000);
-        this.Organizationlink().click();
-        browser.sleep(2000);
-        this.editicon().click();
-        browser.sleep(2000);
+        this.addorganization().click();
+        browser.sleep(5000);
         this.Cancel().click();
         browser.sleep(2000);
         this.addorganization().isDisplayed().then(function (dis) {

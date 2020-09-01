@@ -4,20 +4,20 @@ Usermgmt = new UsermanagementPage();
 
 describe('User management Creation', () => {
 
-    it('Verify Import user is working', () => {
-        Usermgmt.Import();
-    });
+    // it('Verify Import user is working', () => {
+    //     Usermgmt.ImportUser();
+    // });
     it('Verify add user is working', () => {
         Usermgmt.AddUser();
     });
     it('Verify update User is working', () => {
-        Usermgmt.Update();
+        Usermgmt.Updateuser();
     });
     it('Verify clear user data is working', () => {
-        Usermgmt.Clear();
+        Usermgmt.ClearAccessrequestpopupdata();
     });
     it('Verify cancel organization popup  is working', () => {
-        Usermgmt.Cancel();
+        Usermgmt.CancelAccessrequestpopup();
     });
     it('Verify  delete organization is working', () => {
         Usermgmt.Deleteuser();
