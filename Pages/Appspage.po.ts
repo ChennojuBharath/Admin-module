@@ -20,7 +20,7 @@ export class AppsPage {
     }
 Updateapp(){
     browser.ignoreSynchronization = true
-    var dataRecs = dataProvider.getJsonDataFromFile('./TestData/Apps/AppsData.json', null)
+    var dataRecs = dataProvider.getJsonDataFromFile('./TestData/App/AppData.json', null)
     if (dataRecs && dataRecs.length > 0) {
         dataRecs.forEach(record => {
             browser.sleep(5000);
@@ -46,7 +46,7 @@ Updateapp(){
 }
 ClearUpdateappopup(){
     browser.ignoreSynchronization = true
-    var dataRecs = dataProvider.getJsonDataFromFile('./TestData/Apps/AppsData.json', null)
+    var dataRecs = dataProvider.getJsonDataFromFile('./TestData/App/AppData.json', null)
     if (dataRecs && dataRecs.length > 0) {
         dataRecs.forEach(record => {
             browser.sleep(5000);

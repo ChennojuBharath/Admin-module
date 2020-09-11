@@ -19,13 +19,19 @@ export class UsermanagementPage {
         return element(by.xpath("(//mat-icon[text()='edit'])[8]"));
     }
     deleteicon() {
-        return element(by.xpath("(//mat-icon[text()='delete'])[1]"));
+        return element(by.xpath("(//mat-icon[text()='delete'])[8]"));
     }
     namefeild() {
         return element(by.xpath("//input[@formcontrolname='name']"))
     }
     Import() {
-        return element(by.xpath("//span[contains(text(),'Import')]"))
+        return element(by.xpath("(//span[contains(text(),'Import')])[1]"))
+    }
+    Importpop() {
+        return element(by.xpath("(//span[contains(text(),'Import')])[2]"))
+    }
+     Cancelpop() {
+        return element(by.xpath("(//span[text()='Cancel'])[2]"))
     }
     Save() {
         return element(by.xpath("//span[text()='Save']"))
@@ -44,6 +50,9 @@ export class UsermanagementPage {
     }
     Adduserbtn() {
         return element(by.xpath("//span[text()='Add User ']"))
+    }
+     popup() {
+        return element(by.xpath("//div[@class='cdk-overlay-pane']"))
     }
     firstName() {
         return element(by.xpath("//input[@formcontrolname='firstName']"))
@@ -101,11 +110,13 @@ export class UsermanagementPage {
                 var audioPath = path.resolve(__dirname, path1);
                 browser.sleep(500);
                 this.typefile().sendKeys(audioPath);
-                browser.sleep(2000);
-                this.Import().click();
-                this.Adduserbtn().isDisplayed().then(function (dis) {
+                browser.sleep(5000);
+                this.Importpop().click();
+                browser.sleep(500);
+                this.Cancelpop().click();
+                this.Import().isDisplayed().then(function (dis) {
                     expect(dis).toBe(true, 'User  is imported successfully')
-                })
+                })            
     }
 Updateuser(){
     browser.ignoreSynchronization = true
@@ -143,9 +154,9 @@ Deleteuser() {
     this.deleteicon().click();
     browser.sleep(2000);
     this.Cancel().click();
-    browser.sleep(2000);
+    browser.sleep(4000);
     this.deleteicon().click();
-    browser.sleep(2000);
+    browser.sleep(5000);
     this.okbtn().click();
     browser.sleep(4000);
     this.Adduserbtn().isDisplayed().then(function (dis) {

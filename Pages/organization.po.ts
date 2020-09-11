@@ -40,6 +40,9 @@ export class OrganizationPage {
     namefeild() {
         return element(by.xpath("//input[@formcontrolname='name']"))
     }
+    Importuser() {
+        return element(by.xpath("//span[contains(text(),'Import')]"))
+    }
     Import() {
         return element(by.xpath("(//span[contains(text(),'Import')])[2]"))
     }
@@ -103,7 +106,7 @@ export class OrganizationPage {
         var audioPath = path.resolve(__dirname, path1);
         browser.sleep(500);
         this.typefile().sendKeys(audioPath);
-        browser.sleep(2000);
+        browser.sleep(5000);
         this.Import().click();
         browser.sleep(2000);
          this.addorganization().isDisplayed().then(function (dis) {
@@ -125,6 +128,7 @@ export class OrganizationPage {
                 BrowserUtils.enterText(by.xpath("//input[@formcontrolname='name']"), record["Orgname"]);
                 browser.sleep(2000);
                 BrowserUtils.selectDropdownValue(by.xpath("//select[@formcontrolname='parent']"), record["Orgparent"]);
+                 browser.sleep(2000);
                 this.Save().click();
                 this.addorganization().isDisplayed().then(function (dis) {
                     expect(dis).toBe(true, 'Addorganization  is successful')
@@ -182,15 +186,27 @@ export class OrganizationPage {
         }
     }
     Canceladdorgpopup() {
-        browser.ignoreSynchronization = true
-        browser.sleep(5000);
-        this.addorganization().click();
-        browser.sleep(5000);
-        this.Cancel().click();
-        browser.sleep(2000);
-        this.addorganization().isDisplayed().then(function (dis) {
-            expect(dis).toBe(true, 'Cancel organization popup is successful')
-        })
+         browser.ignoreSynchronization = true
+        var dataRecs = dataProvider.getJsonDataFromFile('./TestData/Organization/OrganizationData.json', null)
+        if (dataRecs && dataRecs.length > 0) {
+            dataRecs.forEach(record => {
+                browser.sleep(5000);
+                this.Organizationlink().click();
+                browser.sleep(2000);
+                this.addorganization().click();
+                browser.sleep(5000);
+                BrowserUtils.selectDropdownValue(by.xpath("//select[@formcontrolname='type']"), record["OrgType"]);
+                browser.sleep(1000);
+                BrowserUtils.enterText(by.xpath("//input[@formcontrolname='name']"), record["Orgname"]);
+                browser.sleep(2000);
+                BrowserUtils.selectDropdownValue(by.xpath("//select[@formcontrolname='parent']"), record["Orgparent"]);
+                 browser.sleep(2000);
+                this.Save().click();
+                this.addorganization().isDisplayed().then(function (dis) {
+                    expect(dis).toBe(true, 'Addorganization  is successful')
+                })
+            })
+        }
     }
     Deleteorganization() {
         browser.ignoreSynchronization = true
@@ -216,7 +232,7 @@ export class OrganizationPage {
             dataRecs.forEach(record => {
                 browser.sleep(5000);
                 this.Organizationlink().click();
-                browser.sleep(2000);
+                browser.sleep(12000);
                 this.usericon().click();
                 browser.sleep(5000);
                 this.Adduserbtn().click();
@@ -233,7 +249,7 @@ export class OrganizationPage {
                 browser.sleep(2000);
                 this.Save().click();
                 browser.sleep(5000);
-                this.Adduserbtn().isDisplayed().then(function (dis) {
+                this.Organizationlink().isDisplayed().then(function (dis) {
                     expect(dis).toBe(true, 'Usert in organization is created successfully')
                 })
             })
@@ -244,7 +260,9 @@ export class OrganizationPage {
                 browser.sleep(5000);
                 this.Organizationlink().click();
                 browser.sleep(2000);
-                this.Import().click();
+                 this.usericon().click();
+                browser.sleep(5000);
+                this.Importuser().click();
                 browser.sleep(2000);
                 var path1 = '../../TestData/users.json';
                 var audioPath = path.resolve(__dirname, path1);
@@ -252,7 +270,10 @@ export class OrganizationPage {
                 this.typefile().sendKeys(audioPath);
                 browser.sleep(2000);
                 this.Import().click();
-                this.Adduserbtn().isDisplayed().then(function (dis) {
+                browser.sleep(2000);
+                this.Cancel().click();
+                browser.sleep(2000);
+                this.Organizationlink().isDisplayed().then(function (dis) {
                     expect(dis).toBe(true, 'User  is imported successfully')
                 })
     }
@@ -280,7 +301,7 @@ Updateuserfororg(){
             browser.sleep(2000);
             this.Update().click();
             browser.sleep(5000);
-            this.Adduserbtn().isDisplayed().then(function (dis) {
+            this.Organizationlink().isDisplayed().then(function (dis) {
                 expect(dis).toBe(true, 'User in organization is updated successfully')
             })
         })
@@ -329,7 +350,7 @@ Accessrequestforuserfororg(){
                 browser.sleep(1000);
             this.Save().click();
             browser.sleep(5000);
-            this.Adduserbtn().isDisplayed().then(function (dis) {
+            this.Organizationlink().isDisplayed().then(function (dis) {
                 expect(dis).toBe(true, 'Access request for User in organization is updated successfully')
             })
         })
@@ -349,7 +370,7 @@ CancelAccessrequestpopup(){
             browser.sleep(5000);
             this.Cancel().click();
             browser.sleep(5000);
-            this.Adduserbtn().isDisplayed().then(function (dis) {
+            this.Organizationlink().isDisplayed().then(function (dis) {
                 expect(dis).toBe(true, 'Cancel for Access request popup in organization is  successfully')
             })
         })
@@ -381,7 +402,7 @@ ClearAccessrequestpopupdata(){
             browser.sleep(1000);
             this.Cancel().click();
             browser.sleep(5000);
-            this.Adduserbtn().isDisplayed().then(function (dis) {
+            this.Organizationlink().isDisplayed().then(function (dis) {
                 expect(dis).toBe(true, 'Clear Access request popup data for User in organization is successfully')
             })
         })
@@ -395,7 +416,7 @@ breadcrumbs(){
     browser.sleep(5000);
     this.Userpagebreadcrumb().click();
     browser.sleep(2000);
-    this.Adduserbtn().isDisplayed().then(function (dis) {
+    this.Organizationlink().isDisplayed().then(function (dis) {
         expect(dis).toBe(true, 'User page brewadcrumb is working is successfully')
     })
 }
@@ -411,7 +432,7 @@ listandgridviewwithexpansion(){
     browser.sleep(2000);
     this.appicon().click();
     browser.sleep(5000);
-    this.Adduserbtn().isDisplayed().then(function (dis) {
+    this.Organizationlink().isDisplayed().then(function (dis) {
         expect(dis).toBe(true, 'App icon and list icons are working successfully')
     })
 }

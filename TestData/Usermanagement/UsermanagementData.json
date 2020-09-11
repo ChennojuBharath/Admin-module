@@ -1,19 +1,19 @@
 {
-    "firstName": "Cheteshwar",
-    "lastName": "Pujara",
-    "userName": "ChBharath",
-    "mobile": "8686893458",
-    "Reporting": "Goa",
-    "emailId": "Cheteshwa.c@walkingtree.tech",
-    "UpdatefirstName": "admin",
-    "UpdatlastName": "Bharath",
-    "UpdatuserName": "CBharath",
-    "Updatmobile": "8686893353",
-    "UpdatemailId": "bharath.chennoju@walking.tech",
-    "LMS": "rv_course_approver",
-    "Teacher": "rv_teacher",
-    "Admin": "admin",
-    "UserReporting": " Select",
-    "Monitoring": "surveyor"
+      "firstName": "Cheteshwar1",
+      "lastName": "Pujara1",
+      "userName": "ChBharath1",
+      "mobile": "86868934511",
+      "Reporting": "Goa1",
+      "emailId": "Cheteshwa1.c@walkingtree.tech",
+      "UpdatefirstName": "admin1",
+      "UpdatlastName": "Bharath1",
+      "UpdatuserName": "CBharath1",
+      "Updatmobile": "8686893313",
+      "UpdatemailId": "bharath1.chennoju@walking.tech",
+      "LMS": "rv_course_approver",
+      "Teacher": "rv_teacher",
+      "Admin": "admin",
+      "UserReporting": " Select",
+      "Monitoring": "surveyor"
 
-}
+  }

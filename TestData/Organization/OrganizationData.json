@@ -1,6 +1,6 @@
 {
-    "OrgType": "Goa",
-      "Orgname": "admin",
+    "OrgType": "Division",
+      "Orgname": "Telangana",
       "Orgparent": "/Goa",
       "UpdateOrgType": "Zone",
       "UpdateOrgname": "admin",
